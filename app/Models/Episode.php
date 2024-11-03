@@ -14,12 +14,12 @@ class Episode extends Model
 
     protected $guarded = ['id'];
 
-    public function podcast() : BelongsTo
+    public function podcast(): BelongsTo
     {
         return $this->belongsTo(Podcast::class);
     }
 
-    public function listeningParty() : HasMany
+    public function listeningParty(): HasMany
     {
         return $this->hasMany(ListeningParty::class);
     }

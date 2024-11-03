@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+    use App\Models\Podcast;
+    use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -13,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('podcast_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Podcast::class)->nullable()->constrained()->onDelete('cascade');
             $table->string('title')->nullable();
             $table->string('media_url');
 
